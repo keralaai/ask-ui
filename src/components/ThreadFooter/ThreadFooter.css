@@ -28,6 +28,7 @@
   float: right;
   cursor: pointer;
   border-radius: 50px;
+  overflow: hidden;
 }
 
 .ThreadFooter .ThreadFooter-user-image {
@@ -36,6 +37,7 @@
   border-radius: 50px;
   float: right;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .ThreadFooter-user-image {
@@ -45,6 +47,7 @@
   float: right;
   cursor: pointer;
   transition: all 0.5s;
+  overflow: hidden;
 }
 
 .ThreadFooter-user-image:hover {

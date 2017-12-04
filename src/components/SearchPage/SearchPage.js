@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import fuzzysearch from 'fuzzysearch'
 import Icon from 'react-fa'
+import lunr from 'lunr'
 
 import './SearchPage.css'
 
@@ -13,17 +14,39 @@ class SearchPage extends Component {
     super(props)
 
     this.state = {
-      threads: props.threads
+      threads: props.threads,
+      lunr: lunr(function() {
+        this.ref('id')
+        this.field('title')
+        this.field('content')
+
+        props.threads.forEach(function(doc) {
+          this.add({
+            id: doc.id,
+            title: doc.data.title,
+            content: doc.data.content
+          })
+        }, this)
+      })
     }
 
     this.handleClick = this.handleClick.bind(this)
   }
 
   filterThreads(threads, query) {
-    let filteredThreads = threads.filter(thread =>
-      fuzzysearch(query.toLowerCase(), thread.data.title.toLowerCase())
-    )
-    return filteredThreads
+    let searchResult = this.state.lunr.search(query)
+    let resultKeys = searchResult.map(result => {
+      return result.ref
+    })
+    let resultObjects = threads.filter(object => resultKeys.indexOf(object.id) > -1)
+    if (resultObjects.length === 0) {
+      threads = threads.filter(object =>
+        fuzzysearch(query.toLowerCase(), object.data.title.toLowerCase())
+      )
+    } else {
+      threads = resultObjects
+    }
+    return threads
   }
 
   componentDidMount() {
@@ -38,7 +61,20 @@ class SearchPage extends Component {
     let searchTerm = props.match.params.searchTerm
     this.setState({
       ...this.state,
-      threads: this.filterThreads(props.threads, searchTerm)
+      threads: this.filterThreads(props.threads, searchTerm),
+      lunr: lunr(function() {
+        this.ref('id')
+        this.field('title')
+        this.field('content')
+
+        props.threads.forEach(function(doc) {
+          this.add({
+            id: doc.id,
+            title: doc.data.title,
+            content: doc.data.content
+          })
+        }, this)
+      })
     })
   }
 
@@ -49,8 +85,6 @@ class SearchPage extends Component {
   render() {
     let searchTerm = this.props.match.params.searchTerm
     let threads = this.state.threads
-    console.table(threads)
-    console.log('searchTerm: ', searchTerm)
     return (
       <div className="SearchPage">
         <h2 className="page-title">Search results</h2>
