@@ -129,8 +129,9 @@ class SearchWidget extends Component {
             )}
           </div>
           <div className="SearchWidget-extra">
-            <Link to="/">All Questions</Link>
-            <Link to="/newPost">Ask New</Link>
+            <Link to="/newPost">
+              <Icon name="pencil" />{' '}Ask New
+            </Link>
           </div>
         </div>
       </div>

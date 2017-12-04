@@ -19,7 +19,7 @@ class PageHeader extends Component {
 
   render() {
     const Hero = withRouter(({ history }) => (
-      <span className="strong PageHeader-hero" onClick={() => { history.push('/') }}>Kerala AI</span>
+      <span className="strong PageHeader-hero" onClick={() => { history.push('/') }}>keralaai.in</span>
     ))
     return (
       <nav className="PageHeader">
