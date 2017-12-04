@@ -61,6 +61,14 @@
           ".validate": "newData.isNumber()"
         }
       }
+    },
+    "notify": {
+      ".read": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'",
+      ".write": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'"
+    },
+    "private": {
+      ".read": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'",
+      ".write": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'"
     }
   }
 }
