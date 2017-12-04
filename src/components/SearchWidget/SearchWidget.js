@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 
 import fuzzysearch from 'fuzzysearch'
+import lunr from 'lunr'
 
 import './SearchWidget.css'
 
@@ -13,7 +14,20 @@ class SearchWidget extends Component {
 
     this.state = {
       displayObjects: this.props.objects,
-      searching: false
+      searching: false,
+      lunr: lunr(function() {
+        this.ref('id')
+        this.field('title')
+        this.field('content')
+
+        props.objects.forEach(function(doc) {
+          this.add({
+            id: doc.id,
+            title: doc.data.title,
+            content: doc.data.content
+          })
+        }, this)
+      })
     }
 
     this.filterObjects = this.filterObjects.bind(this)
@@ -23,9 +37,18 @@ class SearchWidget extends Component {
   filterObjects() {
     let query = this.searchInput.value
     let objects = this.props.objects
-    objects = objects.filter(object =>
-      fuzzysearch(query.toLowerCase(), object.data.title.toLowerCase())
-    )
+    let searchResult = this.state.lunr.search(query)
+    let resultKeys = searchResult.map(result => {
+      return result.ref
+    })
+    let resultObjects = objects.filter(object => resultKeys.indexOf(object.id) > -1)
+    if (resultObjects.length === 0) {
+      objects = objects.filter(object =>
+        fuzzysearch(query.toLowerCase(), object.data.title.toLowerCase())
+      )
+    } else {
+      objects = resultObjects
+    }
 
     if (query.length > 0) {
       this.setState({
@@ -130,7 +153,7 @@ class SearchWidget extends Component {
           </div>
           <div className="SearchWidget-extra">
             <Link to="/newPost">
-              <Icon name="pencil" />{' '}Ask New
+              <Icon name="pencil" /> Ask New
             </Link>
           </div>
         </div>
