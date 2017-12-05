@@ -18,6 +18,14 @@ class ThreadList extends Component {
       sorted: false,
       sortedThreads: []
     }
+    if (props.threads.length > 0) {
+      let sortedThreads = this.getSortedThreadList(props.threads)
+      this.state = {
+        loading: false,
+        sorted: true,
+        sortedThreads
+      }
+    }
 
     this.handleClick = this.handleClick.bind(this)
     this.getUpdatedSortedThreads = this.getUpdatedSortedThreads.bind(this)
@@ -55,7 +63,7 @@ class ThreadList extends Component {
         sorted: true,
         sortedThreads
       })
-    } else {
+    } else if(this.state.sorted) {
       let updatedThreads = this.getUpdatedSortedThreads([ ...this.state.sortedThreads ], props.threads)
       this.setState({
         ...this.state,
