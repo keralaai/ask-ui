@@ -45,7 +45,7 @@ class Thread extends Component {
         <fieldset>
           <legend>{legend}</legend>
           <h2 className="Thread-title">{title}</h2>
-          {this.props.data.posts && <mark>Answered</mark>}
+          {this.props.data.posts ? <mark>Answered</mark> : <mark className="Thread-prop-unanswered">Unanswered</mark>}
           <hr className="Thread-seperator" />
           <div style={{ maxHeight: maxHeight, overflowY: overflow }}>
             <Markdown

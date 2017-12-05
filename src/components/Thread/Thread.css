@@ -8,6 +8,10 @@
   font-size: 40px;
 }
 
+.Thread-prop-unanswered{
+  background: rgba(0,0,0,0.1);
+}
+
 .Thread-seperator {
   height: 6px;
   background: url(./hr.png) repeat-x 0 0;
