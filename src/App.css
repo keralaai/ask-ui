@@ -29,8 +29,9 @@ button {
 }
 
 .page-title {
-  text-decoration: skyblue underline double;
-  text-decoration-style: wavy;
+  text-decoration: skyblue double underline;
+  /* text-decoration-style: wavy; */
+  margin-top: 16px;
   text-align: center;
   animation: pound 0.3s;
 }

@@ -25,6 +25,7 @@ class ThreadListDisplay extends Component {
             user={user}
             postKey={thread.id}
             data={thread.data}
+            zoomout={this.props.zoomout}
             bordered={this.props.bordered}
             raiseOnHover={this.props.raiseOnHover}
             maxHeight={this.props.maxHeight}

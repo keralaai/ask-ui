@@ -49,7 +49,7 @@ class ThreadList extends Component {
               user={this.props.user}
               bordered={true}
               raiseOnHover={true}
-              maxHeight="500px"
+              maxHeight="200px"
               handleClick={this.handleClick}
             />
           </div>
