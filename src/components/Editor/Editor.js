@@ -56,7 +56,7 @@ class Editor extends Component {
                 ref={ref => {
                   this.titleInput = ref
                 }}
-                defaultValue={this.props.defaultHeading ? this.props.defaultHeading : ""}
+                defaultValue={this.props.defaultHeading ? this.props.defaultHeading : ''}
                 type="text"
               />
             </div>

@@ -14,10 +14,13 @@ class ThreadList extends Component {
     super(props)
 
     this.state = {
-      loading: true
+      loading: true,
+      sorted: false,
+      sortedThreads: []
     }
 
     this.handleClick = this.handleClick.bind(this)
+    this.getUpdatedSortedThreads = this.getUpdatedSortedThreads.bind(this)
   }
 
   componentDidMount() {
@@ -35,8 +38,57 @@ class ThreadList extends Component {
     this.props.history.push('/thread/' + key)
   }
 
+  getLikes(object) {
+    let likes = []
+    for (let like in object.data.likes) {
+      if (object.data.likes[like]) likes.push(like)
+    }
+    return likes.length
+  }
+
+  componentWillReceiveProps(props) {
+    // Sorting everyt time a post is liked is a mess
+    if (props.threads.length > 0 && !this.state.sorted) {
+      let sortedThreads = this.getSortedThreadList(props.threads)
+      this.setState({
+        ...this.state,
+        sorted: true,
+        sortedThreads
+      })
+    } else {
+      let updatedThreads = this.getUpdatedSortedThreads([ ...this.state.sortedThreads ], props.threads)
+      this.setState({
+        ...this.state,
+        sortedThreads: updatedThreads
+      })
+    }
+  }
+
+  getSortedThreadList(threads) {
+    return threads.sort((a, b) => this.getLikes(a) < this.getLikes(b))
+  }
+
+  getThreadWithKey(key, threads) {
+    for(let thread in threads){
+      if (threads[thread].id === key){
+        return threads[thread]
+      }
+    }
+    return false
+  }
+
+  getUpdatedSortedThreads(sortedThreads, newThreads){
+    let newSortedThreads = []
+    for(let thread in sortedThreads){
+      let sortedThreadData = this.getThreadWithKey(sortedThreads[thread].id, newThreads)
+      if (sortedThreadData !== false)
+        newSortedThreads[thread] = sortedThreadData
+    }
+    return newSortedThreads
+  }
+
   render() {
-    let threads = this.props.threads
+    let threads = this.state.sortedThreads
     return (
       <div className="ThreadList">
         {this.state.loading ? (
