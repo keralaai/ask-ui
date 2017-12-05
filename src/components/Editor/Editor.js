@@ -14,7 +14,6 @@ class Editor extends Component {
 
     this.handleClick = this.handleClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
-
   }
 
   handleClick() {
@@ -29,8 +28,7 @@ class Editor extends Component {
           }
           this.props.onSubmit(data)
         }
-      }
-      else {
+      } else {
         const data = {
           content
         }
@@ -51,25 +49,33 @@ class Editor extends Component {
       <div className="Editor">
         <fieldset>
           <legend>{title}</legend>
-          {this.props.hasHeading &&
+          {this.props.hasHeading && (
             <div className="form-item">
-              <label>Title</label> <input ref={(ref) => { this.titleInput = ref }} type="text" />
+              <label>Title</label>
+              <input
+                ref={ref => {
+                  this.titleInput = ref
+                }}
+                defaultValue={this.props.defaultHeading ? this.props.defaultHeading : ""}
+                type="text"
+              />
             </div>
-          }
+          )}
           <div className="form-item">
-            {this.props.hasHeading &&
-            <label>Summary</label>
-            }
-            <SimpleMDE
-              onChange={this.handleChange}
-            />
+            {this.props.hasHeading && <label>Summary</label>}
+            <SimpleMDE onChange={this.handleChange} />
           </div>
-          <button onClick={this.handleClick} className="button outline secondary" style={{ float: 'right' }}>Submit</button>
+          <button
+            onClick={this.handleClick}
+            className="button outline secondary"
+            style={{ float: 'right' }}
+          >
+            Submit
+          </button>
         </fieldset>
       </div>
     )
   }
-
 }
 
 export default Editor

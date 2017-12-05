@@ -51,7 +51,7 @@ class NewThead extends Component {
           <div>
             <br />
             <h2 className="page-title">New Question</h2>
-            <Editor hasHeading={true} onSubmit={this.addThread} />
+            <Editor hasHeading={true} onSubmit={this.addThread} defaultHeading={this.props.match.params.postTitle} />
           </div>
         ) : (
           <div className="NewThread-not-signed-in">

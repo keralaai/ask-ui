@@ -83,7 +83,6 @@ class SearchPage extends Component {
   }
 
   render() {
-    let searchTerm = this.props.match.params.searchTerm
     let threads = this.state.threads
     return (
       <div className="SearchPage">

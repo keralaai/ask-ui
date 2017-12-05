@@ -15,6 +15,7 @@ class SearchWidget extends Component {
     this.state = {
       displayObjects: this.props.objects,
       searching: false,
+      searchTerm: '',
       lunr: lunr(function() {
         this.ref('id')
         this.field('title')
@@ -54,12 +55,14 @@ class SearchWidget extends Component {
       this.setState({
         ...this.state,
         searching: true,
-        displayObjects: objects
+        displayObjects: objects,
+        searchTerm: query
       })
     } else {
       this.setState({
         ...this.state,
-        searching: false
+        searching: false,
+        searchTerm: ''
       })
     }
   }
@@ -152,7 +155,7 @@ class SearchWidget extends Component {
             )}
           </div>
           <div className="SearchWidget-extra">
-            <Link to="/newPost">
+            <Link to={'/newPost/' + this.state.searchTerm}>
               <Icon name="pencil" /> Ask New
             </Link>
           </div>
