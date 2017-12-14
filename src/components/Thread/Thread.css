@@ -31,6 +31,12 @@
   max-width: 100%;
 }
 
+fieldset {
+  border-color: rgba(0, 0, 0, 0.01);
+  border-width: 5px;
+  padding: 28px;
+}
+
 fieldset legend {
   /* position: fixed; */
   position: relative;
@@ -41,9 +47,6 @@ fieldset legend {
 
 .raise {
   transition: all 0.5s;
-  border-color: rgba(0, 0, 0, 0.01);
-  border-width: 5px;
-  padding: 28px;
 }
 
 .raise:hover {
@@ -52,9 +55,6 @@ fieldset legend {
 
 .raise-faded {
   transition: all 0.5s;
-  border-color: rgba(0, 0, 0, 0.01);
-  border-width: 5px;
-  padding: 28px;
 }
 
 .raise-faded:hover {

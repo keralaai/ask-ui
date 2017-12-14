@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Icon from 'react-fa'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import Overdrive from 'react-overdrive'
 
 import fuzzysearch from 'fuzzysearch'
 import lunr from 'lunr'
@@ -136,31 +137,33 @@ class SearchWidget extends Component {
     let listHide = this.state.searching ? 'unhide' : ''
     let SearchButton = this.getSearchButton()
     return (
-      <div className="SearchWidget">
-        <input
-          ref={ref => (this.searchInput = ref)}
-          type="text"
-          className="SearchWidget-input"
-          placeholder="Search or ask new question"
-          onChange={this.filterObjects}
-        />
-        <SearchButton />
-        <div className={'SearchWidget-searchList ' + listHide}>
-          <div className="SearchWidget-searches">
-            {objects.map((object, index) => this.objectDisplay(object, index))}
-            {objects.length === 0 && (
-              <div className="SearchWidget-none">
-                <span className="muted">No results</span>
-              </div>
-            )}
-          </div>
-          <div className="SearchWidget-extra">
-            <Link to={'/newPost/' + this.state.searchTerm}>
-              <Icon name="pencil" /> Ask New
-            </Link>
+      <Overdrive id="searchQuery">
+        <div className="SearchWidget">
+          <input
+            ref={ref => (this.searchInput = ref)}
+            type="text"
+            className="SearchWidget-input"
+            placeholder="Search or ask new question"
+            onChange={this.filterObjects}
+          />
+          <SearchButton />
+          <div className={'SearchWidget-searchList ' + listHide}>
+            <div className="SearchWidget-searches">
+              {objects.map((object, index) => this.objectDisplay(object, index))}
+              {objects.length === 0 && (
+                <div className="SearchWidget-none">
+                  <span className="muted">No results</span>
+                </div>
+              )}
+            </div>
+            <div className="SearchWidget-extra">
+              <Link to={'/newPost/' + this.state.searchTerm}>
+                <Icon name="pencil" /> Ask New
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </Overdrive>
     )
   }
 }

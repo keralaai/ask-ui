@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Overdrive from 'react-overdrive'
 
 import './ThreadList.css'
 import firebase from '../../firebase.js'
@@ -63,8 +64,11 @@ class ThreadList extends Component {
         sorted: true,
         sortedThreads
       })
-    } else if(this.state.sorted) {
-      let updatedThreads = this.getUpdatedSortedThreads([ ...this.state.sortedThreads ], props.threads)
+    } else if (this.state.sorted) {
+      let updatedThreads = this.getUpdatedSortedThreads(
+        [...this.state.sortedThreads],
+        props.threads
+      )
       this.setState({
         ...this.state,
         sortedThreads: updatedThreads
@@ -77,20 +81,19 @@ class ThreadList extends Component {
   }
 
   getThreadWithKey(key, threads) {
-    for(let thread in threads){
-      if (threads[thread].id === key){
+    for (let thread in threads) {
+      if (threads[thread].id === key) {
         return threads[thread]
       }
     }
     return false
   }
 
-  getUpdatedSortedThreads(sortedThreads, newThreads){
+  getUpdatedSortedThreads(sortedThreads, newThreads) {
     let newSortedThreads = []
-    for(let thread in sortedThreads){
+    for (let thread in sortedThreads) {
       let sortedThreadData = this.getThreadWithKey(sortedThreads[thread].id, newThreads)
-      if (sortedThreadData !== false)
-        newSortedThreads[thread] = sortedThreadData
+      if (sortedThreadData !== false) newSortedThreads[thread] = sortedThreadData
     }
     return newSortedThreads
   }
@@ -104,14 +107,16 @@ class ThreadList extends Component {
         ) : (
           <div>
             <SearchWidget objects={this.props.threads} />
-            <ThreadListDisplay
-              threads={threads}
-              user={this.props.user}
-              bordered={true}
-              raiseOnHover={true}
-              maxHeight="200px"
-              handleClick={this.handleClick}
-            />
+            <Overdrive id="threadShowcase">
+              <ThreadListDisplay
+                threads={threads}
+                user={this.props.user}
+                bordered={true}
+                raiseOnHover={true}
+                maxHeight="200px"
+                handleClick={this.handleClick}
+              />
+            </Overdrive>
           </div>
         )}
       </div>

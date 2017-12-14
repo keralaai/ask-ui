@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Markdown from 'react-markdown'
+import Overdrive from 'react-overdrive'
 
 import './Thread.css'
 
@@ -29,14 +30,14 @@ class Thread extends Component {
   //   }
   // }
 
-
   render() {
     let title = this.props.data.title
     let isAnswered = this.props.data.posts ? true : false
     let content = this.props.data.content
-    let raise = this.props.raiseOnHover ? isAnswered ? 'raise' : 'raise-faded' : ''
+    let raise = this.props.raiseOnHover ? (isAnswered ? 'raise' : 'raise-faded') : ''
     let maxHeight = this.props.maxHeight ? this.props.maxHeight : 'none'
     let overflow = this.props.maxHeight ? 'auto' : 'none'
+    let overdriveId = this.props.overdriveId ? this.props.overdriveId : ''
     if (this.props.data.user === undefined) {
       return <Loading initialMessage="Loading question, Just a sec." />
     }
@@ -44,28 +45,34 @@ class Thread extends Component {
     let legend = 'Question'
     return (
       <div className={'Thread'} onClick={this.props.handleClick}>
-        <fieldset className={raise}>
-          <legend>{legend}</legend>
-          <h2 className="Thread-title">{title}</h2>
-          {this.props.data.posts ? <mark>Answered</mark> : <mark className="Thread-prop-unanswered">Unanswered</mark>}
-          <hr className="Thread-seperator" />
-          <div style={{ maxHeight: maxHeight, overflowY: overflow }}>
-            <Markdown
-              className={'Thread-content-markdown ' + (this.props.zoomout ? 'zoomout' : '')}
-              source={content}
-              escapeHtml={true}
-              renderers={{
-                code: CodeBlock
-              }}
+        <Overdrive id={overdriveId}>
+          <fieldset className={raise}>
+            <legend>{legend}</legend>
+            <h2 className="Thread-title">{title}</h2>
+            {this.props.data.posts ? (
+              <mark>Answered</mark>
+            ) : (
+              <mark className="Thread-prop-unanswered">Unanswered</mark>
+            )}
+            <hr className="Thread-seperator" />
+            <div style={{ maxHeight: maxHeight, overflowY: overflow }}>
+              <Markdown
+                className={'Thread-content-markdown ' + (this.props.zoomout ? 'zoomout' : '')}
+                source={content}
+                escapeHtml={true}
+                renderers={{
+                  code: CodeBlock
+                }}
+              />
+            </div>
+            <ThreadFooter
+              dockBottom={this.props.dockBottom}
+              user={this.props.user}
+              postKey={this.props.postKey}
+              data={this.props.data}
             />
-          </div>
-          <ThreadFooter
-            dockBottom={this.props.dockBottom}
-            user={this.props.user}
-            postKey={this.props.postKey}
-            data={this.props.data}
-          />
-        </fieldset>
+          </fieldset>
+        </Overdrive>
       </div>
     )
   }

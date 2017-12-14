@@ -123,7 +123,7 @@ class ThreadDetails extends Component {
           hasHeading={true}
           dockBottom={true}
           doneLoading={this.doneLoading}
-          handleClick={(e) => { }}
+          handleClick={() => { }}
         />
         { !showEditor && this.state.posts && this.state.posts.length > 0 &&
         <fieldset>
