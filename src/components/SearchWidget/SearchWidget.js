@@ -139,7 +139,6 @@ class SearchWidget extends Component {
     return (
       <div className="SearchWidget">
         <Overdrive id="overdrive-search">
-          <div className="SearchWidget-overdrive">
             <input
               ref={ref => (this.searchInput = ref)}
               type="text"
@@ -147,9 +146,8 @@ class SearchWidget extends Component {
               placeholder="Search or ask new question"
               onChange={this.filterObjects}
             />
-            <SearchButton />
-          </div>
         </Overdrive>
+            <SearchButton />
         <div className={'SearchWidget-searchList ' + listHide}>
           <div className="SearchWidget-searches">
             {objects.map((object, index) => this.objectDisplay(object, index))}
