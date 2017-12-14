@@ -84,10 +84,12 @@ class SearchPage extends Component {
 
   render() {
     let threads = this.state.threads
+    let searchTerm = this.props.match.params.searchTerm
     return (
       <div className="SearchPage">
         <h2 className="page-title">Search results</h2>
         <SearchWidget objects={this.props.threads} />
+        <em>Searching for: {searchTerm}</em>
         {threads.length > 0 ? (
           <ThreadListDisplay
             threads={threads}
