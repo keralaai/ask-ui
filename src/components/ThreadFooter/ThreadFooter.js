@@ -90,18 +90,13 @@ class ThreadFooter extends Component {
       this.props.user &&
       this.props.data.likes[this.props.user.uid] === true
     const UserImage = withRouter(({ history }) => (
-      <img
-        className="ThreadFooter-user-image"
-        src={user.displayImage}
+      <div
+        className="ThreadFooter-UserImage"
         onClick={ev => {
           this.userIconClick(ev, history)
         }}
-        alt={user.displayName}
-      />
-    ))
-    return (
-      <div className={'ThreadFooter' + (this.props.dockBottom ? '-docked' : '')}>
-        <UserImage />
+      >
+        <img className="ThreadFooter-user-image" src={user.displayImage} alt={user.displayName} />
         <div className="ThreadFooter-elements">
           <p>
             <span className="strong monospace">{user.displayName}</span>
@@ -110,6 +105,11 @@ class ThreadFooter extends Component {
             <span className="muted monospace">{moment(this.props.data.createdAt).fromNow()}</span>
           </p>
         </div>
+      </div>
+    ))
+    return (
+      <div className={'ThreadFooter' + (this.props.dockBottom ? '-docked' : '')}>
+        <UserImage />
         <p className="ThreadFooter-like" onClick={this.handleLike}>
           <Icon name="thumbs-up" className={userLiked ? 'color-blue' : ''} /> {this.numOfLikes()}
         </p>
