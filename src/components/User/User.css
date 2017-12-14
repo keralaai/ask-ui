@@ -4,7 +4,7 @@
     /* margin-top: -2px; */
 }
 
-.User div:first-child{
+.User > div:first-child{
     display: flex;
     height: 50px;
 }
