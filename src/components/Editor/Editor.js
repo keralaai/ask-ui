@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Overdrive from 'react-overdrive'
 
 import './Editor.css'
 
@@ -52,6 +53,7 @@ class Editor extends Component {
           {this.props.hasHeading && (
             <div className="form-item">
               <label>Title</label>
+              <Overdrive id="overdrive-search">
                 <input
                   ref={ref => {
                     this.titleInput = ref
@@ -59,6 +61,7 @@ class Editor extends Component {
                   defaultValue={this.props.defaultHeading ? this.props.defaultHeading : ''}
                   type="text"
                 />
+              </Overdrive>
             </div>
           )}
           <div className="form-item">
