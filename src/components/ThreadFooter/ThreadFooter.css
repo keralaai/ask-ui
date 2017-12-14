@@ -1,17 +1,16 @@
 .ThreadFooter {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.336);
   font-family: monaco, meleno, monospace;
-  float: left;
   width: 100%;
   height: 50px;
+  display: flex;
 }
 
 .ThreadFooter-docked {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(255, 255, 255, 1);
   font-family: monaco, meleno, monospace;
-  float: left;
   width: 100vw;
   height: 60px;
   position: fixed;
@@ -20,12 +19,12 @@
   z-index: 9;
   padding: 5px 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
 }
 
 .ThreadFooter-docked .ThreadFooter-user-image {
   width: 50px;
   height: 50px;
-  float: right;
   cursor: pointer;
   border-radius: 50px;
   overflow: hidden;
@@ -35,16 +34,14 @@
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  float: right;
   cursor: pointer;
   overflow: hidden;
 }
 
 .ThreadFooter-user-image {
   width: 50px;
-  height: auto;
+  height: 50px;
   border-radius: 50px;
-  float: right;
   cursor: pointer;
   transition: all 0.5s;
   overflow: hidden;
@@ -68,8 +65,8 @@
 .ThreadFooter-like {
   user-select: none;
   font-size: 25px;
-  float: right;
-  margin-right: 70px;
+  margin-left: auto;
+  display: inline-block;
   padding: 11px;
   transition: all 0.5s;
 }

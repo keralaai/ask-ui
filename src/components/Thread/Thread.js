@@ -29,10 +29,12 @@ class Thread extends Component {
   //   }
   // }
 
+
   render() {
     let title = this.props.data.title
+    let isAnswered = this.props.data.posts ? true : false
     let content = this.props.data.content
-    let shadow = this.props.raiseOnHover ? 'raise' : ''
+    let raise = this.props.raiseOnHover ? isAnswered ? 'raise' : 'raise-faded' : ''
     let maxHeight = this.props.maxHeight ? this.props.maxHeight : 'none'
     let overflow = this.props.maxHeight ? 'auto' : 'none'
     if (this.props.data.user === undefined) {
@@ -41,8 +43,8 @@ class Thread extends Component {
     // this.doneLoading()
     let legend = 'Question'
     return (
-      <div className={'Thread ' + shadow} onClick={this.props.handleClick}>
-        <fieldset>
+      <div className={'Thread'} onClick={this.props.handleClick}>
+        <fieldset className={raise}>
           <legend>{legend}</legend>
           <h2 className="Thread-title">{title}</h2>
           {this.props.data.posts ? <mark>Answered</mark> : <mark className="Thread-prop-unanswered">Unanswered</mark>}

@@ -102,6 +102,7 @@ class ThreadFooter extends Component {
     ))
     return (
       <div className={'ThreadFooter' + (this.props.dockBottom ? '-docked' : '')}>
+        <UserImage />
         <div className="ThreadFooter-elements">
           <p>
             <span className="strong monospace">{user.displayName}</span>
@@ -110,7 +111,6 @@ class ThreadFooter extends Component {
             <span className="muted monospace">{moment(this.props.data.createdAt).fromNow()}</span>
           </p>
         </div>
-        <UserImage />
         <p className="ThreadFooter-like" onClick={this.handleLike}>
           <Icon name="thumbs-up" className={userLiked ? 'color-blue' : ''} /> {this.numOfLikes()}
         </p>
