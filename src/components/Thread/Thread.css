@@ -34,30 +34,29 @@
 fieldset legend {
   /* position: fixed; */
   position: relative;
-  top: -5px;
+  top: -8px;
   background: white;
   color: cadetblue;
 }
 
 .raise {
   transition: all 0.5s;
-  padding: 32px;
+  border-color: rgba(0, 0, 0, 0.01);
+  border-width: 5px;
+  padding: 28px;
 }
 
 .raise:hover {
-  /* box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.22); */
   border-color: rgb(246, 186, 69);
-  border-width: 5px;
-  padding: 28px;
 }
 
 .raise-faded {
   transition: all 0.5s;
-  padding: 32px;
+  border-color: rgba(0, 0, 0, 0.01);
+  border-width: 5px;
+  padding: 28px;
 }
 
 .raise-faded:hover {
   border-color: #e5e5e5;
-  border-width: 5px;
-  padding: 28px;
 }
