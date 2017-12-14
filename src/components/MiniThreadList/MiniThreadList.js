@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Overdrive from 'react-overdrive'
 
 import './MiniThreadList.css'
 
-class MiniThreadList extends Component{
-
-  getLikesForThread(thread){
+class MiniThreadList extends Component {
+  getLikesForThread(thread) {
     let likes = []
-    for ( let like in thread.likes){
-      if (thread.likes[like]){
+    for (let like in thread.likes) {
+      if (thread.likes[like]) {
         likes.push(like)
       }
     }
     return likes.length
   }
 
-  render(){
+  render() {
     let threads = this.props.threads
     let title = this.props.title
     let noneMessage = this.props.noneMessage
     return (
       <fieldset>
         <legend>{title}</legend>
-        { Object.keys(threads).length > 0 ?
-          <table >
+        {Object.keys(threads).length > 0 ? (
+          <table>
             <tbody>
               <tr>
                 <th>#</th>
@@ -34,18 +34,22 @@ class MiniThreadList extends Component{
                 return (
                   <tr key={thread.id}>
                     <td>{i + 1}</td>
-                    <td><Link to={'/thread/' + thread.id}>{thread.data.title}</Link></td>
+                    <td>
+                      <Overdrive id="threadShowcase">
+                        <Link to={'/thread/' + thread.id}>{thread.data.title}</Link>
+                      </Overdrive>
+                    </td>
                     <td>{this.getLikesForThread(thread.data)}</td>
                   </tr>
                 )
               })}
             </tbody>
           </table>
-          :
+        ) : (
           <p className="MiniThreadList-none">
             <span className="muted">{noneMessage}</span>
           </p>
-        }
+        )}
       </fieldset>
     )
   }

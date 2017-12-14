@@ -37,7 +37,6 @@ class Thread extends Component {
     let raise = this.props.raiseOnHover ? (isAnswered ? 'raise' : 'raise-faded') : ''
     let maxHeight = this.props.maxHeight ? this.props.maxHeight : 'none'
     let overflow = this.props.maxHeight ? 'auto' : 'none'
-    let overdriveId = this.props.overdriveId ? this.props.overdriveId : ''
     if (this.props.data.user === undefined) {
       return <Loading initialMessage="Loading question, Just a sec." />
     }
@@ -45,7 +44,7 @@ class Thread extends Component {
     let legend = 'Question'
     return (
       <div className={'Thread'} onClick={this.props.handleClick}>
-        <Overdrive id={overdriveId}>
+        <Overdrive id="threadShowcase">
           <fieldset className={raise}>
             <legend>{legend}</legend>
             <h2 className="Thread-title">{title}</h2>
