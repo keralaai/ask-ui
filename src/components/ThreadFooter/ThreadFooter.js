@@ -85,6 +85,7 @@ class ThreadFooter extends Component {
 
   render() {
     let user = this.getUser()
+    console.log('user: ', user)
     let userLiked =
       this.props.data.likes &&
       this.props.user &&

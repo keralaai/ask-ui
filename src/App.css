@@ -29,9 +29,10 @@ button {
 }
 
 .page-title {
-  text-decoration: skyblue double underline;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif !important;
+  /* text-decoration: skyblue double underline; */
   /* text-decoration-style: wavy; */
-  margin-top: 16px;
+  margin-top: 30px;
   text-align: center;
   animation: pound 0.3s;
 }
