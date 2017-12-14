@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import { connect } from 'react-redux'
+import Overdrive from 'react-overdrive'
 
 import './UserDetails.css'
 
@@ -131,7 +132,9 @@ class UserDetails extends Component {
     return (
       <div>
         {this.state.loading && this.state.user != null ? (
-          <Loading />
+          <Overdrive id="overdrive-loading">
+            <Loading />
+          </Overdrive>
         ) : (
           <div className="UserDetails">
             <h2 className="page-title">User</h2>
@@ -147,11 +150,13 @@ class UserDetails extends Component {
                 <div className="col UserDetails-user">
                   <fieldset>
                     <legend>User</legend>
-                    <img
-                      className="UserDetails-image"
-                      src={this.state.user.displayImage}
-                      alt={this.state.user.displayName}
-                    />
+                    <Overdrive id="overdrive-loading">
+                      <img
+                        className="UserDetails-image"
+                        src={this.state.user.displayImage}
+                        alt={this.state.user.displayName}
+                      />
+                    </Overdrive>
                     {this.state.user.admin && (
                       <div>
                         <p>
