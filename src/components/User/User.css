@@ -1,11 +1,17 @@
 .User {
-    display: inline-block;
+    display: flex;
     background-color: white;
-    margin-top: -2px;
+    /* margin-top: -2px; */
+}
+
+.User div:first-child{
+    display: flex;
+    height: 50px;
 }
 
 .User-details {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     text-align: right;
     padding-bottom: 5px;
     user-select: none;
@@ -21,9 +27,9 @@
     height: auto;
     margin-left: 10px;
     margin-right: 10px;
-    display: inline-block;
+    /* display: inline-block; */
     cursor: pointer;
-    float: right;
+    /* float: right; */
     border-radius: 50px;
     transition: all 0.5s;
 }
