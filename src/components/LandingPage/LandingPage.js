@@ -37,14 +37,27 @@ class LandingPage extends React.Component {
     let admins = this.state.admins
     return (
       <div className="LandingPage">
+        <div className="stripes-container">
+          <div className="stripe stripe-white" />
+          <div className="stripe stripe-black" />
+          <div className="stripe stripe-white" />
+          <div className="stripe stripe-black" />
+          <div className="stripe stripe-white" />
+          <div className="stripe stripe-black" />
+          <div className="stripe stripe-white" />
+        </div>
         <h1 className="LandingPage-header">Kerala AI Initiative</h1>
         <div className="LandingPage-banner-container">
           <div className="LandingPage-banner">
-            A lot of content here with maybe an image on the right to maybe just spice up things a bit.
+            We are a group of AI enthusiasts who thought it would be a good idea to start a community so that we can get more people interested in AI.
+            Here we hope to do the same by forming an initiative that can help us achive the same.
+
+            I have zero clue as to what to add here. Please help.
+            Soooo cringy.
           </div>
         </div>
-        <h1 className="LandingPage-header">
-          Got a question to <mark onClick={() => this.props.history.push('/ask')}>Ask</mark> us?
+        <h1 className="LandingPage-ask">
+          Got a question to <span onClick={() => this.props.history.push('/ask')}>ask</span> us?
         </h1>
         {admins.length > 0 && (
           <div className="LandingPage-container-container">
