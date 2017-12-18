@@ -1,0 +1,68 @@
+.LandingPage {
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif !important;
+}
+.LandingPage-header {
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif !important;
+  text-align: center;
+}
+.LandingPage-header mark {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.LandingPage-banner-container {
+  width: 500%;
+  margin-left: -200%;
+  background-color: #f5f5f5;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.LandingPage-banner {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+.LandingPage-container-container {
+  width: 500%;
+  margin-left: -200%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.LandingPage-admin-header {
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif !important;
+  /* background-color: #f5f5f5; */
+  margin-bottom: 0;
+  border-radius: 50px 50px 0 0;
+  text-align: center;
+  /* box-shadow: 0px 6px 14px -4px rgba(0, 0, 0, 0.75); */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+  /* border-left: 1px solid rgba(0, 0, 0, 0.1); */
+  /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+  border: 0 solid #f5f5f5;
+  padding: 3px 5px;
+  transition: all 2s;
+  background-color: #f5f5f5;
+  /* padding: 5px 0; */
+  text-decoration: skyblue double underline;
+  padding-top: 10px;
+}
+/* .LandingPage-admin-header:hover { */
+/*   border-left: 100px solid #f5f5f5; */
+/*   border-right: 100px solid #f5f5f5; */
+/* } */
+.LandingPage-admins-container {
+  width: 500%;
+  margin-left: -200%;
+  background-color: #f5f5f5;
+  display: inline-flex;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 0;
+}
+.LandingPage-admins {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 70vw;
+}

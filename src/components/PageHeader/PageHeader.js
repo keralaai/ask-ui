@@ -19,27 +19,39 @@ class PageHeader extends Component {
 
   render() {
     const Hero = withRouter(({ history }) => (
-      <span className="strong PageHeader-hero" onClick={() => { history.push('/') }}>keralaai.in</span>
+      <span
+        className="strong PageHeader-hero"
+        onClick={() => {
+          history.push('/ask')
+        }}
+      >
+        keralaai.in
+      </span>
     ))
+    let path = this.props.location.pathname
     return (
-      <nav className="PageHeader">
-        <div className="PageHeader-logo">
-          <p style={{ padding: 12 }}>
-            <Hero />
-          </p>
-        </div>
-        <div className="PageHeader-user">
-          <User handle={this.handleAuth} />
-        </div>
-      </nav>
+      <div>
+        {' '}
+        {path !== '/' && (
+          <nav className="PageHeader">
+            <div className="PageHeader-logo">
+              <p style={{ padding: 12 }}>
+                <Hero />
+              </p>
+            </div>
+            <div className="PageHeader-user">
+              <User handle={this.handleAuth} />
+            </div>
+          </nav>
+        )}
+      </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    user: state.user
   }
 }
 

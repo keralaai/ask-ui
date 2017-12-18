@@ -13,6 +13,7 @@ import './kube.min.css'
 
 import 'react-simplemde-editor/dist/simplemde.min.css'
 
+import LandingPage from './components/LandingPage/LandingPage'
 import ThreadList from './components/ThreadList/ThreadList'
 import ThreadDetails from './components/ThreadDetails/ThreadDetails'
 import UserDetails from './components/UserDetails/UserDetails'
@@ -35,10 +36,11 @@ class App extends Component {
             hover={{ background: 'black', color: 'white' }}
             timing="easeIn"
           />
-          <PageHeader />
+          <Route path="/" component={PageHeader}/>
 
           <div className="App-content">
-            <Route exact path="/" render={({ history }) => <ThreadList history={history} />} />
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/ask" render={({ history }) => <ThreadList history={history} />} />
             <Route exact path="/newPost/" component={NewThread} />
             <Route path="/newPost/:postTitle" component={NewThread} />
             <Route path="/thread/:threadId" component={ThreadDetails} />

@@ -67,7 +67,7 @@
       ".write": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'"
     },
     "private": {
-      ".read": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'",
+      ".read": true,
       ".write": "auth.uid == '6XjUfQBVpkUnAYvzwFAY5dTzp3R2'"
     }
   }
