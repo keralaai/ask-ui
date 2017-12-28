@@ -49,11 +49,9 @@ class LandingPage extends React.Component {
         <h1 className="LandingPage-header">Kerala AI Initiative</h1>
         <div className="LandingPage-banner-container">
           <div className="LandingPage-banner">
-            We are a group of AI enthusiasts who thought it would be a good idea to start a community so that we can get more people interested in AI.
-            Here we hope to do the same by forming an initiative that can help us achive the same.
-
-            I have zero clue as to what to add here. Please help.
-            Soooo cringy.
+            A group of guys from Kerala who like ML and would like to build an ML community in Kerala.
+            <br/>
+            Well that is pretty much all we got to describe ourself.
           </div>
         </div>
         <h1 className="LandingPage-ask">
