@@ -23,7 +23,7 @@ class LandingPage extends React.Component {
       .once(
         'value',
         snap => {
-          let admins = [...snap.val(), ...snap.val(), ...snap.val()]
+          let admins = [...snap.val()]
           this.setState({
             ...this.state,
             admins
@@ -62,7 +62,7 @@ class LandingPage extends React.Component {
             <h3 className="LandingPage-admin-header">Admins</h3>
             <div className="LandingPage-admins-container">
               <div className="LandingPage-admins">
-                {admins.map(admin => <LandingPageAvatar key={admin.uid} id={admin.uid} />)}
+                {admins.map(admin => <LandingPageAvatar key={admin.uid} id={admin.uid} history={this.props.history} />)}
               </div>
             </div>
           </div>

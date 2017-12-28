@@ -39,12 +39,18 @@ class LandingPageAvatar extends React.Component {
 
   render() {
     let user = this.state.user
+    let history = this.props.history
+    console.log('history: ', history);
     return (
       <div className="LandingPageAvatar">
         {user != null && (
           <div className="LandingPageAvatar-data">
-            <img className="LandingPageAvatar-user-image" src={user.displayImage} alt={user.displayName} />
-            <span>{user.displayName}</span>
+            <img className="LandingPageAvatar-user-image"
+              src={user.displayImage} alt={user.displayName}
+              onClick={() => {history.push('/user/' + this.props.id)}}
+            />
+            {/* toLowerCase becasue full caps cannot `capitalize` in css */}
+            <span className="LandingPageAvatar-user-name">{user.displayName.toLowerCase()}</span>
           </div>
         )}
       </div>
