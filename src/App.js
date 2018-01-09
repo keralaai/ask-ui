@@ -39,8 +39,7 @@ class App extends Component {
           <Route path="/" component={PageHeader}/>
 
           <div className="App-content">
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/ask" render={({ history }) => <ThreadList history={history} />} />
+            <Route exact path="/" render={({ history }) => <ThreadList history={history} />} />
             <Route exact path="/newPost/" component={NewThread} />
             <Route path="/newPost/:postTitle" component={NewThread} />
             <Route path="/thread/:threadId" component={ThreadDetails} />
