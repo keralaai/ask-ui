@@ -150,13 +150,11 @@ class UserDetails extends Component {
                 <div className="col UserDetails-user">
                   <fieldset>
                     <legend>User</legend>
-                    <Overdrive id="overdrive-loading">
                       <img
                         className="UserDetails-image"
                         src={this.state.user.displayImage}
                         alt={this.state.user.displayName}
                       />
-                    </Overdrive>
                     {this.state.user.admin && (
                       <div>
                         <p>
@@ -182,25 +180,25 @@ class UserDetails extends Component {
                     </p>
                   </fieldset>
                 </div>
-                <div className="col UserDetails-stuff">
-                  <MiniThreadList
-                    threads={userQuestions}
-                    title="Questions"
-                    noneMessage="Well, the user has not asked any questions so far."
-                  />
-                  <MiniThreadList
-                    threads={userLiked}
-                    title="Likes"
-                    noneMessage="Looks like the user has liked nothing. Some serious person."
-                  />
-                  {this.state.user.admin && (
+                  <div className="col UserDetails-stuff">
                     <MiniThreadList
-                      threads={this.state.answeredQuestions}
-                      title="Answered"
-                      noneMessage="Not answered any questions. Yet..."
+                      threads={userQuestions}
+                      title="Questions"
+                      noneMessage="Well, the user has not asked any questions so far."
                     />
-                  )}
-                </div>
+                    <MiniThreadList
+                      threads={userLiked}
+                      title="Likes"
+                      noneMessage="Looks like the user has liked nothing. Some serious person."
+                    />
+                    {this.state.user.admin && (
+                      <MiniThreadList
+                        threads={this.state.answeredQuestions}
+                        title="Answered"
+                        noneMessage="Not answered any questions. Yet..."
+                      />
+                    )}
+                  </div>
               </div>
             )}
           </div>

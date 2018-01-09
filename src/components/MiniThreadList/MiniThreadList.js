@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Overdrive from 'react-overdrive'
 
 import './MiniThreadList.css'
 
@@ -35,9 +34,7 @@ class MiniThreadList extends Component {
                   <tr key={thread.id}>
                     <td>{i + 1}</td>
                     <td>
-                      <Overdrive id="threadShowcase">
-                        <Link to={'/thread/' + thread.id}>{thread.data.title}</Link>
-                      </Overdrive>
+                      <Link to={'/thread/' + thread.id}>{thread.data.title}</Link>
                     </td>
                     <td>{this.getLikesForThread(thread.data)}</td>
                   </tr>
