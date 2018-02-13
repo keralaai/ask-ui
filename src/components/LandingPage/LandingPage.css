@@ -1,0 +1,131 @@
+.LandingPage {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  margin-bottom: -75px;
+  line-height: 1;
+}
+.LandingPage-header {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-family: 'Reem Kufi', sans-serif;
+  padding: 10px;
+  font-size: 2rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+#LandingPage-section-1 {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  height: 500px;
+  padding: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 500px) {
+  #LandingPage-section-1 {
+    height: 450px;
+  }
+}
+.LandingPage-section-1-content {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Reem Kufi', sans-serif;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+@media only screen and (max-width: 500px) {
+  .LandingPage-section-1-content {
+    font-size: 2rem;
+  }
+}
+.Typist {
+  display: inline-block;
+}
+
+#LandingPage-section-2 {
+  min-height: 300px;
+  padding: 30px;
+  text-align: center;
+}
+.LandingPage-section-2-tagline {
+  font-weight: 300 !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 53px;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 500px) {
+  .LandingPage-section-2-tagline {
+    font-size: 35px;
+  }
+}
+.LandingPage-2-tagline-highlight {
+  font-weight: bold;
+  font-family: 'Reem Kufi', sans-serif;
+}
+#LandingPage-section-3 {
+  width: 100vw;
+  min-height: 100px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#LandingPage-section-4 {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  min-height: 100px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.LandingPage-section-header {
+  font-family: 'Reem Kufi', sans-serif;
+  width: 100%;
+  text-align: right;
+  padding: 20px;
+  padding-bottom: 50px;
+  font-size: 1.5rem;
+}
+
+#LandingPage-section-5 {
+  background-color: black;
+  font-family: 'Reem Kufi', sans-serif;
+  color: white;
+  width: 100vw;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid;
+}
+
+.swal2-popup,
+.swal2-confirm {
+  border-radius: 0 !important;
+  outline: none !important;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.swal2-confirm {
+  background-color: black !important;
+}
+.swal2-icon {
+  color: black !important;
+  border-color: black !important;
+}
+.swal-banner {
+  padding: 5px;
+  background-color: rgba(189, 189, 189, 0.3);
+  margin: 0 -25px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-family: 'Reem Kufi', sans-serif;
+}

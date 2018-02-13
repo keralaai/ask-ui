@@ -36,7 +36,7 @@ class NewThead extends Component {
         .database()
         .ref('users/' + this.props.user.uid + '/threads/' + key)
         .set(true)
-      this.props.history.push('/')
+      this.props.history.push('/ask')
     }
   }
 

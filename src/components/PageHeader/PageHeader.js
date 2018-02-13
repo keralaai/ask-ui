@@ -22,24 +22,26 @@ class PageHeader extends Component {
       <span
         className="strong PageHeader-hero"
         onClick={() => {
-          history.push('/')
+          history.push('/ask')
         }}
       >
-        keralaai.in
+        ASK
       </span>
     ))
     return (
       <div>
-        <nav className="PageHeader">
-          <div className="PageHeader-logo">
-            <p style={{ padding: 12 }}>
-              <Hero />
-            </p>
-          </div>
-          <div className="PageHeader-user">
-            <User handle={this.handleAuth} />
-          </div>
-        </nav>
+        {this.props.history.location.pathname != '/' && (
+          <nav className="PageHeader">
+            <div className="PageHeader-logo">
+              <p style={{ padding: 12 }}>
+                <Hero />
+              </p>
+            </div>
+            <div className="PageHeader-user">
+              <User handle={this.handleAuth} />
+            </div>
+          </nav>
+        )}
       </div>
     )
   }
