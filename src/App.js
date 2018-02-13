@@ -13,7 +13,6 @@ import './kube.min.css'
 
 import 'react-simplemde-editor/dist/simplemde.min.css'
 
-import LandingPage from './components/LandingPage/LandingPage'
 import ThreadList from './components/ThreadList/ThreadList'
 import ThreadDetails from './components/ThreadDetails/ThreadDetails'
 import UserDetails from './components/UserDetails/UserDetails'
