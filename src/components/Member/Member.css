@@ -1,0 +1,37 @@
+.Member {
+  font-family: 'Reem Kufi', sans-serif;
+  display: flex;
+  direction: vertical;
+  flex-wrap: wrap;
+  width: 150px;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.Member-image {
+  width: 150px;
+  height: 150px;
+}
+
+.Member-detail {
+  text-align: center;
+}
+
+.Member-name {
+  width: 150px;
+}
+
+.Member-platforms {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Member-platforms div {
+  display: inline-block;
+  padding: 3px;
+  font-size: 1.2rem;
+}
+
+a {
+  color: white;
+}
