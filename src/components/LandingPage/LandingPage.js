@@ -22,7 +22,7 @@ class LandingPage extends Component {
               Or you have already started and need help? We got you.`,
           button: 'Ask',
           link: '/ask',
-          onClick: () => {},
+          onClick: () => {}
         },
         {
           name: 'Find Speakers',
@@ -38,9 +38,9 @@ class LandingPage extends Component {
       Just email us at the email address below and we will get in touch with you.
       <div class="swal-banner">hello@keralaai.in</div>
       `,
-              showCloseButton: true,
+              showCloseButton: true
             })
-          },
+          }
         },
         {
           name: 'Project Sponsorships',
@@ -57,10 +57,10 @@ class LandingPage extends Component {
       Get in touch with us at.
       <div class="swal-banner">hello@keralaai.in</div>
       `,
-              showCloseButton: true,
+              showCloseButton: true
             })
-          },
-        },
+          }
+        }
       ],
       members: [
         {
@@ -70,7 +70,7 @@ class LandingPage extends Component {
           github: 'GopikrishnanSasikumar',
           twitter: 'gopidotai',
           facebook: 'Gopikrishnan Sasikumar',
-          photo: '/photos/IMG_20171127_014318_652 - gopi krishnan-min.jpg',
+          photo: '/photos/IMG_20171127_014318_652 - gopi krishnan-min.jpg'
         },
         {
           timestamp: '2018/01/15 6:03:19 PM GMT+5:30',
@@ -79,7 +79,7 @@ class LandingPage extends Component {
           github: 'niazangels',
           twitter: 'niazangels',
           facebook: 'niazangels',
-          photo: '/photos/niazangels - Niyas Mohammed-min.jpg',
+          photo: '/photos/niazangels - Niyas Mohammed-min.jpg'
         },
         {
           timestamp: '2018/01/17 9:48:55 PM GMT+5:30',
@@ -88,16 +88,7 @@ class LandingPage extends Component {
           github: 'psbots',
           twitter: 'psbots',
           facebook: '',
-          photo: '/photos/IMG_20170910_143601 - Praveen Sridhar-min.jpg',
-        },
-        {
-          timestamp: '2018/02/09 11:15:17 PM GMT+5:30',
-          name: 'Jacob Celestine',
-          email: 'jacobceles@gmail.com',
-          github: 'jacobceles',
-          twitter: '',
-          facebook: 'jacobceles',
-          photo: '/photos/FB_IMG_1518198272231 - Jacob Celestine-min.jpg',
+          photo: '/photos/IMG_20170910_143601 - Praveen Sridhar-min.jpg'
         },
         {
           timestamp: '2018/02/09 11:15:32 PM GMT+5:30',
@@ -106,7 +97,7 @@ class LandingPage extends Component {
           github: 'farizrahman4u',
           twitter: 'farizrahman4u',
           facebook: '',
-          photo: '/photos/FB_IMG_1518198312917 - Fariz Rahman-min.jpg',
+          photo: '/photos/FB_IMG_1518198312917 - Fariz Rahman-min.jpg'
         },
         {
           timestamp: '2018/02/09 11:19:44 PM GMT+5:30',
@@ -115,7 +106,7 @@ class LandingPage extends Component {
           github: 'ibrahiminfinite',
           twitter: 'ibrahiminfinite',
           facebook: '',
-          photo: '/photos/IMG_20171103_112556 - MOHAMMED IBRAHIM-min.jpg',
+          photo: '/photos/IMG_20171103_112556 - MOHAMMED IBRAHIM-min.jpg'
         },
         {
           timestamp: '2018/02/09 11:21:41 PM GMT+5:30',
@@ -124,7 +115,7 @@ class LandingPage extends Component {
           github: 'abhaikollara',
           twitter: 'meAbhai',
           facebook: 'abhaikollara',
-          photo: '/photos/Abhai Kollara Dilip-Passport size photograph - Abhai Kollara-min.JPG',
+          photo: '/photos/Abhai Kollara Dilip-Passport size photograph - Abhai Kollara-min.JPG'
         },
         {
           timestamp: '2018/02/10 12:14:53 AM GMT+5:30',
@@ -133,9 +124,9 @@ class LandingPage extends Component {
           github: 'true-source',
           twitter: '@Christyjacob126',
           facebook: '',
-          photo: '/photos/IMG_20180124_115737_688 - Christie Jacob-min.jpg',
-        },
-      ],
+          photo: '/photos/IMG_20180124_115737_688 - Christie Jacob-min.jpg'
+        }
+      ]
     }
 
     this.typingDone = this.typingDone.bind(this)
@@ -156,7 +147,7 @@ class LandingPage extends Component {
       Just email us at the email address below and we will get in touch with you.
       <div class="swal-banner">hello@keralaai.in</div>
       `,
-      showCloseButton: true,
+      showCloseButton: true
     })
   }
 
@@ -170,7 +161,7 @@ class LandingPage extends Component {
       Get in touch with us at.
       <div class="swal-banner">hello@keralaai.in</div>
       `,
-      showCloseButton: true,
+      showCloseButton: true
     })
   }
 
@@ -208,10 +199,11 @@ class LandingPage extends Component {
         </div>
         <div id="LandingPage-section-2">
           <h2 className="LandingPage-section-2-tagline">
-            We are an <span className="LandingPage-2-tagline-highlight">open community</span> dedicated to
-            advancing <span className="LandingPage-2-tagline-highlight">AI research</span> in{' '}
-            <span className="LandingPage-2-tagline-highlight">Kerala</span> by bringing together academics,
-            researchers and industry experts alike.
+            We are an <span className="LandingPage-2-tagline-highlight">open community</span>{' '}
+            dedicated to advancing{' '}
+            <span className="LandingPage-2-tagline-highlight">AI research</span> in{' '}
+            <span className="LandingPage-2-tagline-highlight">Kerala</span> by bringing together
+            academics, researchers and industry experts alike.
           </h2>
         </div>
         <div id="LandingPage-section-3">
