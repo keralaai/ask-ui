@@ -8,9 +8,14 @@
   margin: 0 5px;
 }
 
+.Member-image-container {
+  width: 150px;
+  height: 130px;
+  overflow: hidden;
+}
+
 .Member-image {
   width: 150px;
-  height: 150px;
 }
 
 .Member-detail {

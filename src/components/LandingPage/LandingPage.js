@@ -64,7 +64,6 @@ class LandingPage extends Component {
       ],
       members: [
         {
-          timestamp: '2018/01/15 5:37:20 PM GMT+5:30',
           name: 'Gopikrishnan Sasikumar',
           email: 'gopikrishnans1996@gmail.com',
           github: 'GopikrishnanSasikumar',
@@ -73,16 +72,6 @@ class LandingPage extends Component {
           photo: '/photos/IMG_20171127_014318_652 - gopi krishnan-min.jpg'
         },
         {
-          timestamp: '2018/01/15 6:03:19 PM GMT+5:30',
-          name: 'Niyas Mohammed',
-          email: 'niaz.angels@gmail.com',
-          github: 'niazangels',
-          twitter: 'niazangels',
-          facebook: 'niazangels',
-          photo: '/photos/niazangels - Niyas Mohammed-min.jpg'
-        },
-        {
-          timestamp: '2018/01/17 9:48:55 PM GMT+5:30',
           name: 'Praveen Sridhar',
           email: 'prvn431@gmail.com',
           github: 'psbots',
@@ -91,7 +80,6 @@ class LandingPage extends Component {
           photo: '/photos/IMG_20170910_143601 - Praveen Sridhar-min.jpg'
         },
         {
-          timestamp: '2018/02/09 11:15:32 PM GMT+5:30',
           name: 'Fariz Rahman',
           email: 'farizrahman4u@gmail.com',
           github: 'farizrahman4u',
@@ -100,7 +88,6 @@ class LandingPage extends Component {
           photo: '/photos/FB_IMG_1518198312917 - Fariz Rahman-min.jpg'
         },
         {
-          timestamp: '2018/02/09 11:19:44 PM GMT+5:30',
           name: 'V Mohammed Ibrahim',
           email: 'ibrahimjkd@gmail.com',
           github: 'ibrahiminfinite',
@@ -109,7 +96,6 @@ class LandingPage extends Component {
           photo: '/photos/IMG_20171103_112556 - MOHAMMED IBRAHIM-min.jpg'
         },
         {
-          timestamp: '2018/02/09 11:21:41 PM GMT+5:30',
           name: 'Abhai Kollara Dilip',
           email: 'abhai.dilip@gmail.com',
           github: 'abhaikollara',
@@ -118,13 +104,28 @@ class LandingPage extends Component {
           photo: '/photos/Abhai Kollara Dilip-Passport size photograph - Abhai Kollara-min.JPG'
         },
         {
-          timestamp: '2018/02/10 12:14:53 AM GMT+5:30',
           name: 'Christie J Purackal',
           email: 'christeejacobs@gmail.com',
           github: 'true-source',
-          twitter: '@Christyjacob126',
+          twitter: 'Christyjacob126',
           facebook: '',
           photo: '/photos/IMG_20180124_115737_688 - Christie Jacob-min.jpg'
+        },
+        {
+          name: 'Siddharth Prajosh',
+          email: 'sprajosh@gmail.com',
+          github: 'Sprajosh',
+          twitter: 'Sprajosh',
+          facebook: 'Sprajosh',
+          photo: '/photos/IMG-20171130-WA0023 - Siddharth Prajosh-min.jpg'
+        },
+        {
+          name: 'Abin Simon',
+          email: 'abinsimon10@gmail.com',
+          github: 'meain',
+          twitter: 'meain_',
+          facebook: 'abinsimon10',
+          photo: '/photos/DSC_1129-01 (1)-min.jpeg'
         }
       ]
     }

@@ -7,7 +7,9 @@ class Member extends Component {
   render() {
     return (
       <div className="Member">
-        <img className="Member-image" src={this.props.data.photo} alt={this.props.data.name} />
+        <div className="Member-image-container">
+          <img className="Member-image" src={this.props.data.photo} alt={this.props.data.name} />
+        </div>
         <div className="Member-detail">
           <div className="Member-name">{this.props.data.name}</div>
           <div className="Member-platforms">
