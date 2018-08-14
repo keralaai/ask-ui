@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './LandingPage.css'
 
+import Icon from 'react-fa'
 import swal from 'sweetalert2'
 import Typist from 'react-typist'
 import '../../../node_modules/react-typist/dist/Typist.css'
@@ -24,14 +25,14 @@ class LandingPage extends Component {
           link: '/ask',
           onClick: () => {}
         },
-        {
-          name: 'Code',
-          description: `Well, of course we code. You can always chech us out on GIthub.
-          We are an open community. Feel free to join us and contiribute.`,
-          button: 'Github',
-          link: 'https://github.com/keralaai',
-          onClick: () => {}
-        },
+        // {
+        //   name: 'Code',
+        //   description: `Well, of course we code. You can always chech us out on GIthub.
+        //   We are an open community. Feel free to join us and contiribute.`,
+        //   button: 'Github',
+        //   link: 'https://github.com/keralaai',
+        //   onClick: () => {}
+        // },
         {
           name: 'Find Speakers',
           description:
@@ -218,8 +219,15 @@ class LandingPage extends Component {
         <div id="LandingPage-section-3">
           {this.state.doings.map((doing, i) => <Doing key={i} data={doing} />)}
         </div>
+        <div id="LandingPage-section-github">
+          <div>Well, of course we code. Feel free to stalk us and steal cool stuff.</div>
+          <a className="Github-button" href="https://github.com/keralaai">
+            <Icon name="github" />
+            <div className="github-text">Find us on Github</div>
+          </a>
+        </div>
         <div id="LandingPage-section-4">
-          <div className="LandingPage-section-header">MEMBERS</div>
+          {/* <div className="LandingPage-section-header">MEMBERS</div> */}
           {this.state.members.map((member, i) => <Member key={i} data={member} />)}
         </div>
         <div id="LandingPage-section-5">Copyright Keralaai 2018</div>
