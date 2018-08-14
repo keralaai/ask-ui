@@ -25,6 +25,14 @@ class LandingPage extends Component {
           onClick: () => {}
         },
         {
+          name: 'Code',
+          description: `Well, of course we code. You can always chech us out on GIthub.
+          We are an open community. Feel free to join us and contiribute.`,
+          button: 'Github',
+          link: 'https://github.com/keralaai',
+          onClick: () => {}
+        },
+        {
           name: 'Find Speakers',
           description:
             'Hosting a machine learning conference at your campus? We can help you find speakers.',
