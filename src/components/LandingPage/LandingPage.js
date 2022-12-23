@@ -114,9 +114,9 @@ class LandingPage extends Component {
         },
         {
           name: 'Christie J Purackal',
-          email: 'christeejacobs@gmail.com',
-          github: 'true-source',
-          twitter: 'Christyjacob126',
+          email: 'cjpurackal@gmail.com',
+          github: 'cjpurackal',
+          twitter: 'cjpurackal',
           facebook: '',
           photo: '/photos/IMG_20180124_115737_688 - Christie Jacob-min.jpg'
         },
